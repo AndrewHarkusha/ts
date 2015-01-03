@@ -1,3 +1,7 @@
+app_ts:
+    resource: "@AppTSBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: @AppBundle/Controller/
     type:     annotation

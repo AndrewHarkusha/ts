@@ -1,0 +1,3 @@
+app_ts_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: AppTSBundle:Default:index }
