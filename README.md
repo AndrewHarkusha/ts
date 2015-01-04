@@ -2,6 +2,6 @@
 
 Short news
 ============
-The project site showing short news from different spheres (politics, sports, music, etc)
+The project showing short news from different spheres (social, sports, music, etc)
 
 
