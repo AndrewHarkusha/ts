@@ -1,0 +1,30 @@
+app_news:
+    path:     /
+    defaults: { _controller: "AppTSBundle:News:index" }
+
+app_news_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppTSBundle:News:show" }
+
+app_news_new:
+    path:     /new
+    defaults: { _controller: "AppTSBundle:News:new" }
+
+app_news_create:
+    path:     /create
+    defaults: { _controller: "AppTSBundle:News:create" }
+    requirements: { _method: post }
+
+app_news_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppTSBundle:News:edit" }
+
+app_news_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppTSBundle:News:update" }
+    requirements: { _method: post|put }
+
+app_news_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppTSBundle:News:delete" }
+    requirements: { _method: post|delete }

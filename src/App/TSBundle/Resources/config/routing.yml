@@ -1,3 +1,11 @@
+app_ts_app_news:
+    resource: "@AppTSBundle/Resources/config/routing/news.yml"
+    prefix:   /app_news
+
+app_ts_news:
+    resource: "@AppTSBundle/Resources/config/routing/news.yml"
+    prefix: /news
+
 app_ts_homepage:
     path:     /hello/{name}
     defaults: { _controller: AppTSBundle:Default:index }

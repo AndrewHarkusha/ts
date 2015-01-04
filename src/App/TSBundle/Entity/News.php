@@ -388,19 +388,51 @@ class News
     {
         return $this->category;
     }
+  
     /**
-     * @ORM\PrePersist
-     */
+    * @ORM\PrePersist
+    */
     public function setCreatedAtValue()
     {
-        // Add your code here
+        if(!$this->getCreatedAt())
+        {
+            $this->created_at = new \DateTime();
+        }
     }
 
     /**
-     * @ORM\PreUpdate
-     */
+    * @ORM\PreUpdate
+    */
     public function setUpdatedAtValue()
     {
-        // Add your code here
+        $this->updated_at = new \DateTime();
+    }
+    /**
+     * @var string
+     */
+    private $position;
+
+
+    /**
+     * Set position
+     *
+     * @param string $position
+     * @return News
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    /**
+     * Get position
+     *
+     * @return string 
+     */
+    public function getPosition()
+    {
+        return $this->position;
     }
 }

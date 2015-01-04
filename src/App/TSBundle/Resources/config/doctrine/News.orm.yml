@@ -12,14 +12,16 @@ App\TSBundle\Entity\News:
             length: 255
             nullable: true
         data:
-            type: datetime
+            type: string
+            length: 255
+        position:
+            type: string
+            length: 400
         url:
             type: string
             length: 255
             nullable: true
         description:
-            type: text
-        how_to_apply:
             type: text
         token:
             type: string
@@ -31,11 +33,6 @@ App\TSBundle\Entity\News:
         is_activated:
             type: boolean
             nullable: true
-        email:
-            type: string
-            length: 255
-        expires_at:
-            type: datetime
         created_at:
             type: datetime
         updated_at:

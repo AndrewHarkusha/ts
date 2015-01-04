@@ -136,4 +136,9 @@ class Category
     {
         return $this->editors;
     }
+
+    public function __toString()
+    {
+        return $this->getName() ? $this->getName() : "";
+    }
 }
