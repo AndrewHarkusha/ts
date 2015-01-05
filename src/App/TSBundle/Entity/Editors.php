@@ -2,8 +2,6 @@
 
 namespace App\TSBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Editors
  */
@@ -32,12 +30,12 @@ class Editors
     /**
      * @var boolean
      */
-    private $is_active;
+    private $isActivate;
 
     /**
      * @var \DateTime
      */
-    private $created_at;
+    private $createdAt;
 
     /**
      * @var \Doctrine\Common\Collections\Collection

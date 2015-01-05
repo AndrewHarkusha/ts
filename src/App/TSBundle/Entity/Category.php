@@ -2,8 +2,6 @@
 
 namespace App\TSBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Category
  */

@@ -2,8 +2,6 @@
 
 namespace App\TSBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * News
  */
@@ -34,10 +32,6 @@ class News
      */
     private $description;
 
-    /**
-     * @var string
-     */
-    private $how_to_apply;
 
     /**
      * @var string
@@ -47,32 +41,28 @@ class News
     /**
      * @var boolean
      */
-    private $is_public;
+    private $isPublic;
 
     /**
      * @var boolean
      */
-    private $is_activated;
+    private $isActivated;
 
     /**
      * @var string
      */
     private $email;
 
-    /**
-     * @var \DateTime
-     */
-    private $expires_at;
 
     /**
      * @var \DateTime
      */
-    private $created_at;
+    private $createdAt;
 
     /**
      * @var \DateTime
      */
-    private $updated_at;
+    private $updatedAt;
 
     /**
      * @var \App\TSBundle\Entity\Category
@@ -195,15 +185,6 @@ class News
         return $this;
     }
 
-    /**
-     * Get how_to_apply
-     *
-     * @return string 
-     */
-    public function getHowToApply()
-    {
-        return $this->how_to_apply;
-    }
 
     /**
      * Set token
@@ -297,28 +278,6 @@ class News
         return $this->email;
     }
 
-    /**
-     * Set expires_at
-     *
-     * @param \DateTime $expiresAt
-     * @return News
-     */
-    public function setExpiresAt($expiresAt)
-    {
-        $this->expires_at = $expiresAt;
-
-        return $this;
-    }
-
-    /**
-     * Get expires_at
-     *
-     * @return \DateTime 
-     */
-    public function getExpiresAt()
-    {
-        return $this->expires_at;
-    }
 
     /**
      * Set created_at
