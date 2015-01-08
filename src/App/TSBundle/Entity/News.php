@@ -2,6 +2,8 @@
 
 namespace App\TSBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * News
  */
@@ -18,9 +20,14 @@ class News
     private $type;
 
     /**
-     * @var \DateTime
+     * @var string
      */
     private $data;
+
+    /**
+     * @var string
+     */
+    private $position;
 
     /**
      * @var string
@@ -31,7 +38,6 @@ class News
      * @var string
      */
     private $description;
-
 
     /**
      * @var string
@@ -47,12 +53,6 @@ class News
      * @var boolean
      */
     private $isActivated;
-
-    /**
-     * @var string
-     */
-    private $email;
-
 
     /**
      * @var \DateTime
@@ -106,7 +106,7 @@ class News
     /**
      * Set data
      *
-     * @param \DateTime $data
+     * @param string $data
      * @return News
      */
     public function setData($data)
@@ -119,11 +119,34 @@ class News
     /**
      * Get data
      *
-     * @return \DateTime 
+     * @return string 
      */
     public function getData()
     {
         return $this->data;
+    }
+
+    /**
+     * Set position
+     *
+     * @param string $position
+     * @return News
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    /**
+     * Get position
+     *
+     * @return string 
+     */
+    public function getPosition()
+    {
+        return $this->position;
     }
 
     /**
@@ -173,20 +196,6 @@ class News
     }
 
     /**
-     * Set how_to_apply
-     *
-     * @param string $howToApply
-     * @return News
-     */
-    public function setHowToApply($howToApply)
-    {
-        $this->how_to_apply = $howToApply;
-
-        return $this;
-    }
-
-
-    /**
      * Set token
      *
      * @param string $token
@@ -210,119 +219,95 @@ class News
     }
 
     /**
-     * Set is_public
+     * Set isPublic
      *
      * @param boolean $isPublic
      * @return News
      */
     public function setIsPublic($isPublic)
     {
-        $this->is_public = $isPublic;
+        $this->isPublic = $isPublic;
 
         return $this;
     }
 
     /**
-     * Get is_public
+     * Get isPublic
      *
      * @return boolean 
      */
     public function getIsPublic()
     {
-        return $this->is_public;
+        return $this->isPublic;
     }
 
     /**
-     * Set is_activated
+     * Set isActivated
      *
      * @param boolean $isActivated
      * @return News
      */
     public function setIsActivated($isActivated)
     {
-        $this->is_activated = $isActivated;
+        $this->isActivated = $isActivated;
 
         return $this;
     }
 
     /**
-     * Get is_activated
+     * Get isActivated
      *
      * @return boolean 
      */
     public function getIsActivated()
     {
-        return $this->is_activated;
+        return $this->isActivated;
     }
 
     /**
-     * Set email
-     *
-     * @param string $email
-     * @return News
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string 
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-
-    /**
-     * Set created_at
+     * Set createdAt
      *
      * @param \DateTime $createdAt
      * @return News
      */
     public function setCreatedAt($createdAt)
     {
-        $this->created_at = $createdAt;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
     /**
-     * Get created_at
+     * Get createdAt
      *
      * @return \DateTime 
      */
     public function getCreatedAt()
     {
-        return $this->created_at;
+        return $this->createdAt;
     }
 
     /**
-     * Set updated_at
+     * Set updatedAt
      *
      * @param \DateTime $updatedAt
      * @return News
      */
     public function setUpdatedAt($updatedAt)
     {
-        $this->updated_at = $updatedAt;
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
 
     /**
-     * Get updated_at
+     * Get updatedAt
      *
      * @return \DateTime 
      */
     public function getUpdatedAt()
     {
-        return $this->updated_at;
+        return $this->updatedAt;
     }
 
     /**
@@ -347,51 +332,22 @@ class News
     {
         return $this->category;
     }
-  
     /**
-    * @ORM\PrePersist
-    */
+     * @ORM\PrePersist
+     */
     public function setCreatedAtValue()
     {
         if(!$this->getCreatedAt())
         {
-            $this->created_at = new \DateTime();
+            $this->createdAt = new \DateTime();
         }
     }
 
     /**
-    * @ORM\PreUpdate
-    */
+     * @ORM\PreUpdate
+     */
     public function setUpdatedAtValue()
     {
-        $this->updated_at = new \DateTime();
-    }
-    /**
-     * @var string
-     */
-    private $position;
-
-
-    /**
-     * Set position
-     *
-     * @param string $position
-     * @return News
-     */
-    public function setPosition($position)
-    {
-        $this->position = $position;
-
-        return $this;
-    }
-
-    /**
-     * Get position
-     *
-     * @return string 
-     */
-    public function getPosition()
-    {
-        return $this->position;
+        $this->updatedAt = new \DateTime();
     }
 }

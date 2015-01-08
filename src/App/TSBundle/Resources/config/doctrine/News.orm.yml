@@ -27,15 +27,15 @@ App\TSBundle\Entity\News:
             type: string
             length: 255
             unique: true
-        is_public:
+        isPublic:
             type: boolean
             nullable: true
-        is_activated:
+        isActivated:
             type: boolean
             nullable: true
-        created_at:
+        createdAt:
             type: datetime
-        updated_at:
+        updatedAt:
             type: datetime
             nullable: true
     manyToOne:
@@ -43,7 +43,7 @@ App\TSBundle\Entity\News:
             targetEntity: Category
             inversedBy: news
             joinColumn:
-                name: category_id
+                name: categoryId
                 referencedColumnName: id
     lifecycleCallbacks:
         prePersist: [setCreatedAtValue]

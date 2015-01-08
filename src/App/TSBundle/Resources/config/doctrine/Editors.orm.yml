@@ -20,19 +20,19 @@ App\TSBundle\Entity\Editors:
         is_active:
             type: boolean
             nullable: true
-        created_at:
+        createdAt:
             type: datetime
     manyToMany:
         categories:
             targetEntity: Category
             inversedBy: editors
             joinTable:
-                name: category_editors
+                name: categoryEditors
                 joinColumns:
-                    editors_id:
+                    editorsId:
                         referencedColumnName: id
                 inverseJoinColumns:
-                    category_id:
+                    categoryId:
                         referencedColumnName: id
     lifecycleCallbacks:
         prePersist: [setCreatedAtValue]

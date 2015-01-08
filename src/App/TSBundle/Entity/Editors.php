@@ -2,6 +2,8 @@
 
 namespace App\TSBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Editors
  */
@@ -30,7 +32,7 @@ class Editors
     /**
      * @var boolean
      */
-    private $isActivate;
+    private $is_active;
 
     /**
      * @var \DateTime
@@ -153,26 +155,26 @@ class Editors
     }
 
     /**
-     * Set created_at
+     * Set createdAt
      *
      * @param \DateTime $createdAt
      * @return Editors
      */
     public function setCreatedAt($createdAt)
     {
-        $this->created_at = $createdAt;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
 
     /**
-     * Get created_at
+     * Get createdAt
      *
      * @return \DateTime 
      */
     public function getCreatedAt()
     {
-        return $this->created_at;
+        return $this->createdAt;
     }
 
     /**
@@ -207,13 +209,11 @@ class Editors
     {
         return $this->categories;
     }
-
     /**
-    * @ORM\PrePersist
-    */
+     * @ORM\PrePersist
+     */
     public function setCreatedAtValue()
     {
-        $this->created_at = new \DateTime();
+        $this->createdAt = new \DateTime();
     }
-
 }

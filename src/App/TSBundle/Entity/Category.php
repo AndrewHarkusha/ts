@@ -2,6 +2,8 @@
 
 namespace App\TSBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Category
  */
@@ -133,10 +135,5 @@ class Category
     public function getEditors()
     {
         return $this->editors;
-    }
-
-    public function __toString()
-    {
-        return $this->getName() ? $this->getName() : "";
     }
 }
